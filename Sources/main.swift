@@ -1,6 +1,7 @@
 import Kitura
 import KituraNet
 import HeliumLogger
+import Foundation
 
 HeliumLogger.use()
 
@@ -11,19 +12,16 @@ router.get("/") { request, response, next in
     next()
 }
 
-router.get("/users/:user") { request, response, next in
-    response.setHeader("Content-Type", value: "text/html; charset=utf-8")
-    let p1 = request.params["user"] ?? "(nil)"
+router.get("/entry") { request, response, next in
     do {
-        try response.status(HttpStatusCode.OK).send(
-            "<!DOCTYPE html><html><body>" +
-                "<b>User:</b> \(p1)" +
-            "</body></html>\n\n").end()
+        try response
+            .status(HTTPStatusCode.OK).send("Hello, world!").end()
     }
-    catch {}
+    catch {
+        print("Response Error!")
+    }
     next()
 }
-
 
 Kitura.addHTTPServer(onPort: 8090, with: router)
 Kitura.run()
