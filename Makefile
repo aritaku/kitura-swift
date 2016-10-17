@@ -20,3 +20,9 @@ export BUILDER_SCRIPTS_DIR=Package-Builder/build
 Package-Builder/build/Makefile:
 	@echo --- Fetching Package-Builder submodule
 	git submodule update --init --remote --merge --recursive
+
+run: build
+	@echo --- Invoking sample executable
+	./.build/debug/sample
+
+.PHONY: run

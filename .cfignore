@@ -1,0 +1,5 @@
+.build/*
+Packages/*
+sample.xcodeproj/project.xcworkspace/xcuserdata/
+sample.xcodeproj/xcuserdata/
+sample.xcodeproj/

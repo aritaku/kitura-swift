@@ -1,7 +1,7 @@
 applications:
-  name: Kitura-Starter-Bluemix
-  memory: 256M
-  instances: 1
-  random-route: true
-  disk_quota: 1024M
-  buildpack: swift_buildpack
+  - name: Sample
+    memory: 256M
+    instances: 1
+    random-route: true
+    disk_quota: 1024M
+    buildpack: swift_buildpack

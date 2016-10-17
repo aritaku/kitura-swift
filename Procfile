@@ -1,1 +1,1 @@
-web: Kitura-Starter-Bluemix
+web: sample
